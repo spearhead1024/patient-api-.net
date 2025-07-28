@@ -1,0 +1,80 @@
+# Patient Advice API
+
+A .NET 9.0 Web API that generates patient health advice via a mock data + LLM (Large Language Model) pipeline.
+
+---
+
+## 🧰 Environment
+
+* **OS:** Windows / macOS / Linux
+* **SDK:** .NET 9.0
+* **Ports:** HTTP `5000`, HTTPS `5001`
+
+---
+
+## 📦 Install
+
+```bash
+git clone https://your-repo.git
+cd PatientAdviceAPI
+```
+
+---
+
+## 🔐 Configuration
+
+Set your OpenAI API key (used by the LLM service):
+
+### Option 1: Using `dotnet user-secrets` (recommended for development)
+
+```bash
+dotnet user-secrets init
+dotnet user-secrets set "OpenAI:ApiKey" "YOUR_KEY"
+```
+
+### Option 2: Using Environment Variable
+
+```bash
+export OpenAI__ApiKey="YOUR_KEY"
+```
+
+---
+
+## 🛠️ Build
+
+```bash
+dotnet restore
+dotnet build --configuration Release
+```
+
+---
+
+## 🚀 Run
+
+```bash
+dotnet run --project PatientAdviceAPI/PatientAdviceAPI.csproj
+```
+
+Swagger UI: [http://localhost:5000](http://localhost:5000)
+
+### Example Endpoint
+
+```
+GET /api/v1/patients/{patientId}/advice
+```
+
+---
+
+## 🧪 Test
+
+Run unit and integration tests:
+
+```bash
+dotnet test --no-build
+```
+
+Example output:
+
+```
+Passed!  - Tested: 2, Skipped: 0, Failed: 0
+```
